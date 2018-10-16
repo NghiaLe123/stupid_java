@@ -3,38 +3,38 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 public class x {
-    public static void main(String[] arg)   {        
-	int CC=hohoho(arg);
-	System.exit(CC);    
+    public static void main(String arg[])   {        
+	int c=ho(arg);
+	System.exit(c);    
 	}
-    public static int hohoho(String uuu[]) {
+    public static int ho(String u[]) {
         try{
-		if (uuu.length != 2) 
+		if (u.length != 2) 
 			return -1;
-			String bbb,ddd= new String(Files.readAllBytes(Paths.get(uuu[1]))); 
-            bbb= new String(Files.readAllBytes(Paths.get(uuu[0])));
-            int kkk = bbb.length();
-            if(kkk<4)               
+			String read1= new String(Files.readAllBytes(Paths.get(u[1]))); 
+            String read2= new String(Files.readAllBytes(Paths.get(u[0])));
+            int k = read2.length();
+            if(k<4)               
 				return -2;
-			int RRR=0; 
-			float eee=0;
-            for(int aaa=0;aaa<kkk-3;aaa++){       
-				for(int qqq=0;qqq<ddd.length()-4;qqq+=1) {
+			int R=0; 
+			float e=0;
+            for(int a=0;a<k-3;a++){       
+				for(int q=0;q<read1.length()-4;q+=1) {
 					int vOv = 0;
-						for(int CC=0;CC<4;CC++){
-							if(bbb.charAt(aaa+CC) == ddd.charAt(qqq+CC))              
+						for(int c=0;c<4;c++){
+							if(read2.charAt(a+c) == read1.charAt(q+c))              
 								vOv ++;
 						}       
 			if (vOv == 4){
-                    System.out.println("DEBUG:".concat(String.valueOf(aaa) + "," + String.valueOf(qqq)));
-                RRR++; 
-				eee+=1;
+                    System.out.println("DEBUG:".concat(String.valueOf(a) + "," + String.valueOf(q)));
+                R++; 
+				e+=1;
 			}
                 else             
-					++RRR;                         
+					++R;                         
 				}
 			}
-            System.out.println(String.valueOf(Math.round(eee)).concat("/")+ String.valueOf(RRR));   
+            System.out.println(String.valueOf(Math.round(e)).concat("/")+ String.valueOf(R));   
 			return 1;
 		} 
 			catch(IOException ex){
